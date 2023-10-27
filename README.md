@@ -18,5 +18,7 @@ You can find them in the folder *data*.
 **Step 3**: Add the data to the Data-base. See **seeding.sql** in **mySQL** folder for this.
 **Step 4**: Use queries to make observations about the Data-base. See **queries.sql** in **mySQL** folder for this. 
 
+##Notes:
+I did not use file language.csv since all the films where in English so there was no need to specify the language. 
 
 #Observations:
