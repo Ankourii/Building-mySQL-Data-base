@@ -20,5 +20,6 @@ You can find them in the folder *data*.
 
 ##Notes:
 I did not use file language.csv since all the films where in English so there was no need to specify the language. 
+I used old_HDD just so I could merge actor and film, and film and category. 
 
 #Observations:
