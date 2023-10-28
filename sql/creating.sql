@@ -34,7 +34,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `video_rental_shop`.`category`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `video_rental_shop`.`category` (
-  `category_id` INT NOT NULL,
+  `category_id` VARCHAR(10) NOT NULL,
   `category_name` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`category_id`))
 ENGINE = InnoDB
@@ -55,11 +55,11 @@ CREATE TABLE IF NOT EXISTS `video_rental_shop`.`film` (
   `replacement_cost` DECIMAL(5,0) NULL DEFAULT NULL,
   `rating` VARCHAR(45) NULL DEFAULT NULL,
   `special_features` VARCHAR(200) NULL DEFAULT NULL,
-  `category_category_id` INT NOT NULL,
+  `category_id` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`film_id`),
-  INDEX `fk_film_category1_idx` (`category_category_id` ASC) VISIBLE,
+  INDEX `fk_film_category1_idx` (`category_id` ASC) VISIBLE,
   CONSTRAINT `fk_film_category1`
-    FOREIGN KEY (`category_category_id`)
+    FOREIGN KEY (`category_id`)
     REFERENCES `video_rental_shop`.`category` (`category_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -70,16 +70,16 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `video_rental_shop`.`actor_film`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `video_rental_shop`.`actor_film` (
-  `actor_actor_id` INT NOT NULL,
-  `film_film_id` INT NOT NULL,
-  PRIMARY KEY (`actor_actor_id`, `film_film_id`),
-  INDEX `fk_actor_has_film_film1_idx` (`film_film_id` ASC) VISIBLE,
-  INDEX `fk_actor_has_film_actor_idx` (`actor_actor_id` ASC) VISIBLE,
+  `actor_id` INT NOT NULL,
+  `film_id` INT NOT NULL,
+  PRIMARY KEY (`actor_id`, `film_id`),
+  INDEX `fk_actor_has_film_film1_idx` (`film_id` ASC) VISIBLE,
+  INDEX `fk_actor_has_film_actor_idx` (`actor_id` ASC) VISIBLE,
   CONSTRAINT `fk_actor_has_film_actor`
-    FOREIGN KEY (`actor_actor_id`)
+    FOREIGN KEY (`actor_id`)
     REFERENCES `video_rental_shop`.`actor` (`actor_id`),
   CONSTRAINT `fk_actor_has_film_film1`
-    FOREIGN KEY (`film_film_id`)
+    FOREIGN KEY (`film_id`)
     REFERENCES `video_rental_shop`.`film` (`film_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -91,12 +91,12 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `video_rental_shop`.`inventory` (
   `inventory_id` INT NOT NULL,
-  `film_film_id` INT NOT NULL,
+  `film_id` INT NOT NULL,
   `store_id` INT NULL DEFAULT NULL,
   PRIMARY KEY (`inventory_id`),
-  INDEX `fk_inventory_film1_idx` (`film_film_id` ASC) VISIBLE,
+  INDEX `fk_inventory_film1_idx` (`film_id` ASC) VISIBLE,
   CONSTRAINT `fk_inventory_film1`
-    FOREIGN KEY (`film_film_id`)
+    FOREIGN KEY (`film_id`)
     REFERENCES `video_rental_shop`.`film` (`film_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
@@ -110,16 +110,16 @@ CREATE TABLE IF NOT EXISTS `video_rental_shop`.`rental` (
   `rental_id` INT NOT NULL,
   `rental_date` DATETIME NULL DEFAULT NULL,
   `rental_dow` VARCHAR(45) NULL,
-  `inventory_inventory_id` INT NOT NULL,
+  `inventory_id` INT NOT NULL,
   `customer_id` INT NULL DEFAULT NULL,
   `return_date` DATETIME NULL DEFAULT NULL,
   `return_dow` VARCHAR(45) NULL,
   `staff_id` INT NULL DEFAULT NULL,
   `days_kept` VARCHAR(45) NULL,
   PRIMARY KEY (`rental_id`),
-  INDEX `fk_rental_inventory1_idx` (`inventory_inventory_id` ASC) VISIBLE,
+  INDEX `fk_rental_inventory1_idx` (`inventory_id` ASC) VISIBLE,
   CONSTRAINT `fk_rental_inventory1`
-    FOREIGN KEY (`inventory_inventory_id`)
+    FOREIGN KEY (`inventory_id`)
     REFERENCES `video_rental_shop`.`inventory` (`inventory_id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
