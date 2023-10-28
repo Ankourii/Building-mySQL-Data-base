@@ -8,14 +8,14 @@ LEFT JOIN film AS f ON f.film_id=af.film_id;
 SELECT actor_name, total_movies
 FROM (
     SELECT CONCAT(a.first_name, ' ', a.last_name) AS actor_name,
-           COUNT(f.title) AS total_movies
+           COUNT(f.title) AS total_films
     FROM actor AS a
     LEFT JOIN actor_film AS af ON a.actor_id = af.actor_id
     LEFT JOIN film AS f ON f.film_id = af.film_id
     GROUP BY actor_name
 ) AS subquery
-WHERE total_movies > 0
-ORDER BY total_movies DESC;
+WHERE total_films > 0
+ORDER BY total_films DESC;
 
 -- 3.This is to see the category of each film 
 SELECT title, category_name 
@@ -24,12 +24,12 @@ LEFT JOIN category AS c on f.category_id=c.category_id
 WHERE category_name not in ("UNKNOWN");
 
 -- 4.This is to see the most popular categories 
-SELECT COUNT(title) AS total_movies , category_name 
+SELECT COUNT(title) AS total_films, category_name 
 FROM film AS f
 LEFT JOIN category AS c ON f.category_id=c.category_id
 WHERE category_name NOT IN ("UNKNOWN")
 GROUP BY category_name
-ORDER BY total_movies DESC;
+ORDER BY total_films DESC;
 
 -- 5. This is to see the most popular day to rent a film. 
 SELECT rental_dow, COUNT(store_id) AS totals
