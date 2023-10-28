@@ -34,7 +34,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `video_rental_shop`.`category`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `video_rental_shop`.`category` (
-  `category_id` VARCHAR(10) NOT NULL,
+  `category_id` INT NOT NULL,
   `category_name` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`category_id`))
 ENGINE = InnoDB
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `video_rental_shop`.`film` (
   `replacement_cost` DECIMAL(5,0) NULL DEFAULT NULL,
   `rating` VARCHAR(45) NULL DEFAULT NULL,
   `special_features` VARCHAR(200) NULL DEFAULT NULL,
-  `category_id` VARCHAR(10) NOT NULL,
+  `category_id` INT NOT NULL,
   PRIMARY KEY (`film_id`),
   INDEX `fk_film_category1_idx` (`category_id` ASC) VISIBLE,
   CONSTRAINT `fk_film_category1`
