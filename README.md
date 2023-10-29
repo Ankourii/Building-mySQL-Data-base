@@ -9,19 +9,19 @@ For this project I have 7 .csv files that I need to create a Data-base in mySQL 
 The files are:
 
 
-_ actor.csv
+_actor.csv_
 
-category.csv
+_category.csv_
 
-film.csv
+_film.csv_
 
-inventory.csv
+_inventory.csv_
 
-language.csv
+_language.csv_
 
-old_HDD.csv
+_old_HDD.csv_
 
-rental.csv _
+_rental.csv_
 
 
 
