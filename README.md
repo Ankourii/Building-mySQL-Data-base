@@ -4,7 +4,11 @@
 ![vrs](https://s.hdnux.com/photos/01/17/43/33/20854464/7/960x0.webp)
 
 For this project I have 7 .csv files that I need to create a Data-base in mySQL with. 
+
+
 The files are:
+
+
 _actor.csv
 category.csv
 film.csv
