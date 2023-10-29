@@ -43,9 +43,12 @@ I removed constant columns from all dataframes.
 I added 3 columns in rental.csv (one column for the day of the week films were rented, one for the day of the week they were returned and one for how long each film was kept by the customer).
 
 # Observations:
-*The 3 actors that appear the most in the films in the video rental store are "Sandra Kilmer", "Uma Wood" and "Val Bolger".
-*Animation is the most popular category for films in the video store. Followed by Sports and Horror. Games category is the least popular. 
-*Saturday, Sunday and Thursday are the busiest days for renting a film at the video store. Tuesday is the least busy. 
-*The most popular days for returns are Mondays, Fridays and Wednesdays and the least popular are Saturdays. 
+* The 3 actors that appear the most in the films in the video rental store are "Sandra Kilmer", "Uma Wood" and "Val Bolger".
+
+* Animation is the most popular category for films in the video store. Followed by Sports and Horror. Games category is the least popular. 
+
+* Saturday, Sunday and Thursday are the busiest days for renting a film at the video store. Tuesday is the least busy. 
+
+* The most popular days for returns are Mondays, Fridays and Wednesdays and the least popular are Saturdays. 
 
 
