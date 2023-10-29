@@ -39,6 +39,13 @@ _rental.csv_
 
 I did not use file language.csv since all the films where in English so there was no need to specify the language. 
 I used old_HDD just so I could merge actor and film, and film and category. 
+I removed constant columns from all dataframes. 
 I added 3 columns in rental.csv (one column for the day of the week films were rented, one for the day of the week they were returned and one for how long each film was kept by the customer).
 
 # Observations:
+*The 3 actors that appear the most in the films in the video rental store are "Sandra Kilmer", "Uma Wood" and "Val Bolger".
+*Animation is the most popular category for films in the video store. Followed by Sports and Horror. Games category is the least popular. 
+*Saturday, Sunday and Thursday are the busiest days for renting a film at the video store. Tuesday is the least busy. 
+*The most popular days for returns are Mondays, Fridays and Wednesdays and the least popular are Saturdays. 
+
+
