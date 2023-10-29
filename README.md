@@ -9,7 +9,7 @@ For this project I have 7 .csv files that I need to create a Data-base in mySQL 
 The files are:
 
 
-_actor.csv
+_ actor.csv
 
 category.csv
 
@@ -21,7 +21,7 @@ language.csv
 
 old_HDD.csv
 
-rental.csv_
+rental.csv _
 
 
 
@@ -35,10 +35,10 @@ rental.csv_
 
 **Step 5**: Use the results of the queries to make graphs. See **notebooks** folder for this. 
 
-##Notes:
+## Notes:
 
 I did not use file language.csv since all the films where in English so there was no need to specify the language. 
 I used old_HDD just so I could merge actor and film, and film and category. 
 I added 3 columns in rental.csv (one column for the day of the week films were rented, one for the day of the week they were returned and one for how long each film was kept by the customer).
 
-#Observations:
+# Observations:
